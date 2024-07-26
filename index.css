@@ -1,0 +1,336 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+*::selection {
+    background-color: gray;
+}
+
+*::-moz-selection {
+    background: gray;
+}
+ 
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+:root{
+    font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    cursor:default;
+}
+#preloader{
+    background-color:black;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: hidden;
+    /* background-image: url(src/svg/Pulse-0.4s-200px.svg); */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 10%;
+    /* filter: invert(1); */
+
+}
+.loader {
+  display: flex;
+  width: 8rem;
+  height: 8rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+}
+
+.curve {
+  width: 180%;
+  height: 180%;
+  position: absolute;
+  animation: rotate 8s linear infinite;
+  fill: transparent;
+}
+
+.curve text {
+  letter-spacing: 20px;
+  text-transform: uppercase;
+  font: 3em "Fira Sans", sans-serif;
+  fill: white;
+  filter: drop-shadow(0 2px 8px black);
+}
+
+.blackhole {
+  z-index: -1;
+  display: flex;
+  position: absolute;
+  width: 8rem;
+  height: 8rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.blackhole-circle {
+  z-index: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, black 25%, white 35%, white 100%);
+  box-shadow: 0px 0px 2rem #c2babb;
+  align-items: center;
+  justify-content: center;
+}
+
+.blackhole-circle::after {
+  z-index: 0;
+  position: absolute;
+  content: "";
+  display: flex;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 4px solid white;
+  background: radial-gradient(circle at center, black 35%, white 60%, white 100%);
+  box-shadow: 0px 0px 5rem #c2babb;
+  align-items: center;
+  justify-content: center;
+  filter: blur(4px);
+  animation: pulseAnimation linear infinite 2s alternate-reverse;
+}
+
+.blackhole-circle::before {
+  z-index: 1;
+  content: "";
+  display: flex;
+  width: 4rem;
+  height: 4rem;
+  border: 2px solid #ffffff;
+  box-shadow: 3px 3px 10px #c2babb, inset 0 0 1rem #ffffff;
+  border-radius: 50%;
+  top: 5rem;
+  filter: blur(0.5px);
+  animation: rotate linear infinite 3s;
+}
+
+.blackhole-disc {
+  position: absolute;
+  z-index: 0;
+  display: flex;
+  width: 5rem;
+  height: 10rem;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #ffffff 80%, #353535 90%, white 100%);
+  filter: blur(1rem) brightness(130%);
+  border: 1rem solid white;
+  box-shadow: 0px 0px 3rem #d7c4be;
+  transform: rotate3d(1, 1, 1, 220deg);
+  animation: pulseAnimation2 linear infinite 2s alternate-reverse;
+  justify-content: center;
+  align-items: center;
+}
+
+.blackhole-disc::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  display: flex;
+  width: 5rem;
+  height: 10rem;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #ffffff 80%, #353535 90%, white 100%);
+  filter: blur(3rem);
+  border: 1rem solid white;
+  box-shadow: 0px 0px 6rem #d7c4be;
+  animation: pulseAnimation linear infinite 2s alternate-reverse;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulseAnimation {
+  0% {
+    box-shadow: 0px 0px 3rem #c2babb;
+    transform: scale(1);
+  }
+
+  100% {
+    box-shadow: 0px 0px 5rem #c2babb;
+    transform: scale(1.09);
+  }
+}
+
+@keyframes pulseAnimation2 {
+  0% {
+    box-shadow: 0px 0px 3rem #c2babb;
+    transform: rotate3d(1, 1, 1, 220deg) scale(1);
+  }
+
+  100% {
+    box-shadow: 0px 0px 5rem #c2babb;
+    transform: rotate3d(1, 1, 1, 220deg)  scale(.95);
+  }
+}
+
+body{
+  background-color: black;
+  overflow: hidden;
+}
+/* landing page */
+.BigdaddyContainer{
+
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bg{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.mainContainer{
+  padding-top: 70px;
+  width: 100%;
+  height: 100%;
+  position:absolute;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.logoContainer{
+    width: 100%;
+    display: flex;
+    align-items:flex-start;
+    justify-content: center;
+
+    height: 80%;
+}
+.logoContainer img{
+    width: 26%;
+}
+
+
+.buttonContainer{
+    height:20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+a{
+    text-decoration: none;
+}
+button {
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 17px;
+    padding: 0.8em 1.3em 0.8em 0.9em;
+    color: black;
+    background: white;
+    border: none;
+    letter-spacing: 0.05em;
+    /* border-radius: 16px; */
+    transition-duration: .5s;
+    
+    cursor: pointer;
+  }
+  
+  button svg {
+    margin-right: 3px;
+    transform: rotate(30deg);
+    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+  
+  button span {
+    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+  
+  button:hover svg {
+    transform: translateX(5px) rotate(90deg);
+  }
+  
+
+/* landing page */
+
+/* responsive code below*/
+@media screen and (max-width:1920px) {
+    html {
+        font-size: 60%;
+    }
+}
+
+@media screen and (max-width:1200px) {
+    html {
+        font-size: 60%;
+    }
+}
+
+@media screen and (max-width:998px) {
+    html {
+        font-size: 55%;
+    }
+    .logoContainer img{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    html {
+        font-size: 50%;
+    }
+ 
+}
+
+@media screen and (max-width:500px) {
+    html {
+        font-size: 45%;  
+    }
+    .logoContainer img{
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width:430px) {
+    html {
+        font-size: 43%;
+    }
+}
+
+@media screen and (max-width:375px) {
+    html {
+        font-size: 40%;
+    }
+}
+@media screen and (max-width:300px) {
+    html {
+        font-size: 40%;
+    }
+}
+
+/* responsive code above */
+
