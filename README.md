@@ -6,7 +6,7 @@
 [![Author](https://img.shields.io/badge/Author-RupendraSingh-purple.svg)](https://www.instagram.com/_rupendra_singh_rajawat_?igshid=YmMyMTA2MsY%3D)
 
  
-![Screenshot of Website]![qr](https://github.com/RupendraSinghRajawat/QR-code-/assets/99586119/10b0d0ba-e167-41f7-8976-100aea62cfae)
+![Screenshot of Website]
 
 
 :star: Star me on GitHub — it helps!
